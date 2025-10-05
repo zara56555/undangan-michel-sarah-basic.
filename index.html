@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah & Michael - Wedding Invitation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Control -->
+    <div class="music-control" onclick="toggleMusic()">
+        <i id="musicIcon" class="fas fa-volume-up"></i>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="ornament top-ornament">❀</div>
+            <h1 class="couple-title">The Wedding of</h1>
+            <div class="couple-names">
+                <h2 class="bride-name">Sarah Amanda</h2>
+                <div class="heart-divider">
+                    <span class="line"></span>
+                    <i class="fas fa-heart"></i>
+                    <span class="line"></span>
+                </div>
+                <h2 class="groom-name">Michael Johnson</h2>
+            </div>
+            <div class="wedding-date">
+                <p>Sabtu, 04 oktober 2025</p>
+            </div>
+            <div class="ornament bottom-ornament">❀</div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2 class="section-title">Countdown to Our Special Day</h2>
+            <div class="countdown-timer" id="countdown">
+                <div class="time-unit">
+                    <span class="time-number" id="days">00</span>
+                    <span class="time-label">Hari</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-number" id="hours">00</span>
+                    <span class="time-label">Jam</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-number" id="minutes">00</span>
+                    <span class="time-label">Menit</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-number" id="seconds">00</span>
+                    <span class="time-label">Detik</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section class="event-details">
+        <div class="container">
+            <h2 class="section-title">Detail Acara</h2>
+            
+            <div class="events-grid">
+                <!-- Akad Nikah -->
+                <div class="event-card">
+                    <div class="event-icon">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3>Akad Nikah</h3>
+                    <div class="event-info">
+                        <p><i class="fas fa-calendar"></i> Sabtu, 15 Desember 2024</p>
+                        <p><i class="fas fa-clock"></i> 09:00 WIB</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Masjid Al-Ikhlas</p>
+                        <p class="address">Jl. Merdeka No. 123, Jakarta Pusat</p>
+                    </div>
+                    <button class="map-button" onclick="openMap('ceremony')">
+                        <i class="fas fa-map"></i> Lihat Lokasi
+                    </button>
+                </div>
+
+                <!-- Resepsi -->
+                <div class="event-card">
+                    <div class="event-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Resepsi</h3>
+                    <div class="event-info">
+                        <p><i class="fas fa-calendar"></i> Sabtu, 15 Desember 2024</p>
+                        <p><i class="fas fa-clock"></i> 18:00 WIB</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Grand Ballroom Hotel Mulia</p>
+                        <p class="address">Jl. Asia Afrika No. 8, Jakarta Selatan</p>
+                    </div>
+                    <button class="map-button" onclick="openMap('reception')">
+                        <i class="fas fa-map"></i> Lihat Lokasi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Galeri Foto</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop" alt="Wedding Photo 1">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=400&h=300&fit=crop" alt="Wedding Photo 2">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&h=300&fit=crop" alt="Wedding Photo 3">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&h=300&fit=crop" alt="Wedding Photo 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=400&h=300&fit=crop" alt="Wedding Photo 5">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Share Section -->
+    <section class="share-section">
+        <div class="container">
+            <h2 class="section-title">Bagikan Undangan</h2>
+            <p class="share-text">Bagikan kebahagiaan kami dengan keluarga dan teman-teman</p>
+            <div class="share-buttons">
+                <button class="share-btn whatsapp" onclick="shareWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </button>
+                <button class="share-btn facebook" onclick="shareFacebook()">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </button>
+                <button class="share-btn twitter" onclick="shareTwitter()">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </button>
+                <button class="share-btn instagram" onclick="shareInstagram()">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </button>
+                <button class="share-btn copy" onclick="copyLink()">
+                    <i class="fas fa-link"></i>
+                    <span>Copy Link</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="couple-names-footer">
+                    <span class="bride">Sarah Amanda</span>
+                    <i class="fas fa-heart"></i>
+                    <span class="groom">Michael Johnson</span>
+                </div>
+                <p class="footer-text">Terima kasih telah menjadi bagian dari hari bahagia kami</p>
+                <div class="footer-ornament">❀ ❀ ❀</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" src="" alt="Wedding Photo">
+            <div class="lightbox-nav">
+                <button class="lightbox-prev" onclick="prevImage()">&lt;</button>
+                <button class="lightbox-next" onclick="nextImage()">&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
